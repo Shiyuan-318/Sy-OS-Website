@@ -688,7 +688,7 @@ section {
 
 .footer-links {
     display: flex;
-    gap: 80px;
+    gap: 60px;
 }
 
 .footer-column h5 {
@@ -710,6 +710,13 @@ section {
 
 .footer-column a:hover {
     color: var(--primary-light);
+}
+
+.footer-qq {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 4px;
 }
 
 .footer-bottom {
