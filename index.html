@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sy OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Logo.png" alt="Sy OS Logo" class="logo-img">
+                <span class="logo-text">Sy OS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products">产品</a></li>
+                <li><a href="#features">特性</a></li>
+                <li><a href="#experience">体验</a></li>
+                <li><a href="#github">开源</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Shiyuan</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Sy OS</span>
+                <br>美观 丝滑 稳定
+            </h1>
+            <p class="hero-description">
+                目标成为领先全球的操作系统
+            </p>
+            <div class="hero-buttons">
+                <a href="#experience" class="btn btn-primary">
+                    <span>立即体验</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/Shiyuan-318" class="btn btn-secondary" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="card-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="card-content">
+                    <div class="terminal-line">$ syos --version</div>
+                    <div class="terminal-output">Sy OS NEXT v1.0.0</div>
+                    <div class="terminal-line">$ _</div>
+                </div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="stats">
+                    <div class="stat-value">64-bit</div>
+                    <div class="stat-label">架构支持</div>
+                </div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="stats">
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label">产品系列</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">产品系列</h2>
+                <p class="section-subtitle">从创意原型到专业系统，满足不同场景需求</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card featured">
+                    <div class="product-badge">旗舰产品</div>
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS</h3>
+                    <p>Scratch 制作的伪桌面操作系统，Sy OS 系列的核心产品</p>
+                    <div class="product-tags">
+                        <span class="tag">Scratch</span>
+                        <span class="tag">桌面系统</span>
+                        <span class="tag">核心产品</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS 国际版</h3>
+                    <p>Sy OS 国际化版本，面向全球用户</p>
+                    <div class="product-tags">
+                        <span class="tag">国际版</span>
+                        <span class="tag">Scratch</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS NEXT</h3>
+                    <p>完全自研的 64 位桌面操作系统，代表 Sy OS 系列的最高技术成就</p>
+                    <div class="product-tags">
+                        <span class="tag">桌面操作系统</span>
+                        <span class="tag">Rust</span>
+                        <span class="tag">Nasm</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS for Pad</h3>
+                    <p>Scratch 制作的伪平板操作系统，专为触控体验优化</p>
+                    <div class="product-tags">
+                        <span class="tag">Scratch</span>
+                        <span class="tag">平板</span>
+                        <span class="tag">触控</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS SE</h3>
+                    <p>Sy OS 精简版，轻量高效的 Scratch 伪桌面系统</p>
+                    <div class="product-tags">
+                        <span class="tag">精简版</span>
+                        <span class="tag">轻量</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS Vision</h3>
+                    <p>适用于 AR 设备的伪操作系统，探索增强现实新境界</p>
+                    <div class="product-tags">
+                        <span class="tag">AR</span>
+                        <span class="tag">Vision</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Open Sy OS</h3>
+                    <p>开源版本的 Sy OS，欢迎社区贡献与二次开发</p>
+                    <div class="product-tags">
+                        <span class="tag">开源</span>
+                        <span class="tag">Scratch</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Sy OS Powered by Linux</h3>
+                    <p>基于 Debian 运行的 Sy OS，融合 Linux 生态</p>
+                    <div class="product-tags">
+                        <span class="tag">Debian</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">核心特性</h2>
+                <p class="section-subtitle">创新技术与卓越体验的完美结合</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">01</div>
+                    <h3>跨平台支持</h3>
+                    <p>从 Scratch 原型到原生系统，覆盖桌面、平板、AR 等多种平台</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">02</div>
+                    <h3>开源生态</h3>
+                    <p>核心项目开源，欢迎开发者参与贡献，共建 Sy OS 生态</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">03</div>
+                    <h3>持续创新</h3>
+                    <p>从伪操作系统到自研内核，不断突破技术边界</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">04</div>
+                    <h3>用户至上</h3>
+                    <p>以用户体验为核心，打造流畅直观的操作界面</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">在线体验</h2>
+                <p class="section-subtitle">无需下载，即刻体验 Sy OS 系列产品</p>
+            </div>
+            <div class="experience-grid">
+                <a href="https://ccw.site/s/RZp2zN" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS</h4>
+                        <p>稳定版本体验</p>
+                    </div>
+                    <span class="exp-badge stable">Stable</span>
+                </a>
+                <a href="https://ccw.site/s/LYwpB" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS 测试版</h4>
+                        <p>体验最新测试功能</p>
+                    </div>
+                    <span class="exp-badge beta">Beta</span>
+                </a>
+                <a href="https://scratch.mit.edu/projects/1282208437" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS 国际版</h4>
+                        <p>国际化版本体验</p>
+                    </div>
+                    <span class="exp-badge stable">Stable</span>
+                </a>
+                <a href="https://ccw.site/s/YRyYRB" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS SE</h4>
+                        <p>精简版体验</p>
+                    </div>
+                    <span class="exp-badge stable">Stable</span>
+                </a>
+                <a href="https://ccw.site/s/g7Bber" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS SE 测试版</h4>
+                        <p>精简版测试体验</p>
+                    </div>
+                    <span class="exp-badge beta">Beta</span>
+                </a>
+                <a href="https://ccw.site/s/DlNRlM" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS for Pad</h4>
+                        <p>平板版体验</p>
+                    </div>
+                    <span class="exp-badge stable">Stable</span>
+                </a>
+                <a href="https://ccw.site/s/0wJ0D7" target="_blank" class="experience-card">
+                    <div class="exp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </div>
+                    <div class="exp-info">
+                        <h4>Sy OS for Pad 测试版</h4>
+                        <p>平板版测试体验</p>
+                    </div>
+                    <span class="exp-badge beta">Beta</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="github" class="github-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">开源项目</h2>
+                <p class="section-subtitle">参与开源社区，共同构建 Sy OS 生态</p>
+            </div>
+            <div class="github-grid">
+                <a href="https://github.com/Shiyuan-318/Open-Sy-OS" target="_blank" class="github-card">
+                    <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <h4>Open Sy OS</h4>
+                    <p>开源版 Sy OS，欢迎社区贡献与二次开发</p>
+                    <span class="github-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="Logo.png" alt="Sy OS Logo" class="logo-img">
+                        <span class="logo-text">Sy OS</span>
+                    </div>
+                    <p>由 Shiyuan 开发的操作系统系列</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>产品</h5>
+                        <a href="#products">产品系列</a>
+                        <a href="#experience">在线体验</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>开发</h5>
+                        <a href="https://github.com/Shiyuan-318" target="_blank">GitHub</a>
+                        <a href="#github">开源项目</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sy OS. All rights reserved. Developed by Shiyuan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
