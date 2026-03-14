@@ -269,88 +269,26 @@ body {
     min-height: 400px;
 }
 
-.floating-card {
-    position: absolute;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    animation: float 6s ease-in-out infinite;
-    box-shadow: var(--glow);
+.screenshot-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(99, 102, 241, 0.3), 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    animation: screenshotFloat 6s ease-in-out infinite;
 }
 
-.card-1 {
-    width: 280px;
-    animation-delay: 0s;
-    z-index: 3;
+.screenshot-img {
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
 
-.card-2 {
-    top: 20%;
-    right: 10%;
-    animation-delay: 1s;
-    z-index: 2;
-}
-
-.card-3 {
-    bottom: 15%;
-    left: 5%;
-    animation-delay: 2s;
-    z-index: 1;
-}
-
-@keyframes float {
+@keyframes screenshotFloat {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.card-header {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 12px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.dot.red { background: #ef4444; }
-.dot.yellow { background: #eab308; }
-.dot.green { background: #22c55e; }
-
-.card-content {
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 0.875rem;
-}
-
-.terminal-line {
-    color: var(--text-secondary);
-    margin-bottom: 4px;
-}
-
-.terminal-output {
-    color: var(--secondary);
-    margin-bottom: 4px;
-}
-
-.stats {
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 2rem;
-    font-weight: 800;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    color: var(--text-muted);
+    50% { transform: translateY(-15px); }
 }
 
 @keyframes fadeInUp {
@@ -748,13 +686,8 @@ section {
         min-height: 300px;
     }
 
-    .floating-card.card-1 {
-        position: relative;
-        margin: 0 auto;
-    }
-
-    .card-2, .card-3 {
-        display: none;
+    .screenshot-container {
+        max-width: 100%;
     }
 }
 
