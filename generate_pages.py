@@ -1,0 +1,125 @@
+import os
+
+pages = [
+    {"file": "syos.html", "title": "Sy OS", "desc": "Scratch 制作的伪桌面操作系统，Sy OS 系列的核心产品，带来极简交互体验。"},
+    {"file": "syos-next.html", "title": "Sy OS NEXT", "desc": "完全自研的 64 位桌面操作系统，代表 Sy OS 系列的最高技术成就，性能全面跃升。"},
+    {"file": "syos-intl.html", "title": "Sy OS 国际版", "desc": "面向全球用户的国际化版本，打破语言边界，连接世界。"},
+    {"file": "syos-pad.html", "title": "Sy OS for Pad", "desc": "专为大屏触控体验优化的伪平板操作系统，激发无限创造力。"},
+    {"file": "syos-se.html", "title": "Sy OS SE", "desc": "Sy OS 精简版，轻量高效，在基础硬件上依然保持流畅运行。"},
+    {"file": "syos-vision.html", "title": "Sy OS Vision", "desc": "适用于 AR 设备的伪操作系统，探索空间计算与增强现实的新境界。"},
+    {"file": "open-syos.html", "title": "Open Sy OS", "desc": "开源版本的 Sy OS，开放生态，欢迎社区贡献与二次开发。"},
+    {"file": "syos-linux.html", "title": "Sy OS on Linux", "desc": "基于 Debian 运行的 Sy OS，完美融合庞大的 Linux 软件生态。"}
+]
+
+template = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} - Sy OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <img src="Logo.png" alt="Sy OS Logo" class="logo-img">
+                <span class="logo-text">Sy OS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#products">智能产品</a></li>
+                <li><a href="index.html#features">核心特性</a></li>
+                <li><a href="index.html#experience">在线体验</a></li>
+                <li><a href="index.html#github">开源社区</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://github.com/Shiyuan-318" target="_blank" class="nav-icon-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                <button class="nav-toggle" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <h1>{title}</h1>
+            <p>{desc}</p>
+        </div>
+    </header>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="product-image-wrapper" style="max-width: 800px; margin: 0 auto 60px; border-radius: 12px; box-shadow: var(--card-shadow); padding-top: 50%;">
+                <!-- 预留详细展示图片位置 -->
+                <img src="" alt="{title} 详细展示" class="product-img-placeholder">
+                <div class="img-fallback-text">产品详细展示图片占位</div>
+            </div>
+            
+            <div class="section-header">
+                <h2 class="section-title">功能详情</h2>
+                <p class="section-subtitle">此处预留为 {title} 的详细功能介绍和图文展示区域。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>关于 Sy OS</h4>
+                        <ul>
+                            <li><a href="#">品牌故事</a></li>
+                            <li><a href="index.html#products">产品家族</a></li>
+                            <li><a href="index.html#features">核心技术</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>开发者资源</h4>
+                        <ul>
+                            <li><a href="https://github.com/Shiyuan-318" target="_blank">GitHub 组织</a></li>
+                            <li><a href="https://github.com/Shiyuan-318/Open-Sy-OS" target="_blank">Open Sy OS</a></li>
+                            <li><a href="#">开发文档</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>支持与服务</h4>
+                        <ul>
+                            <li><a href="index.html#experience">在线体验</a></li>
+                            <li><a href="https://qm.qq.com/q/bWZFbX8iwE" target="_blank">加入 QQ 群 (773619379)</a></li>
+                            <li><a href="#">问题反馈</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="Logo.png" alt="Sy OS" class="footer-logo-img">
+                </div>
+                <p class="copyright">&copy; 2026 Sy OS. 版权所有. 开发者: Shiyuan</p>
+                <div class="footer-legal">
+                    <a href="#">隐私政策</a>
+                    <a href="#">使用条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+"""
+
+for p in pages:
+    with open(p["file"], "w", encoding="utf-8") as f:
+        f.write(template.format(title=p["title"], desc=p["desc"]))
+
+print("Generated 8 product pages successfully.")
