@@ -71,7 +71,7 @@ body {
     margin: 0 auto;
     padding: 0 24px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -83,6 +83,7 @@ body {
     color: var(--text-main);
     font-weight: 700;
     font-size: 1.25rem;
+    margin-right: auto;
 }
 
 .logo-img {
@@ -94,6 +95,8 @@ body {
     display: flex;
     list-style: none;
     gap: 40px;
+    margin-left: auto;
+    justify-content: flex-end;
 }
 
 .nav-links a {
@@ -111,7 +114,8 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    margin-left: 16px;
 }
 
 .nav-icon-link {
@@ -309,6 +313,37 @@ body {
     display: flex;
     gap: 12px;
     z-index: 10;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    border-radius: 999px;
+    cursor: pointer;
+    z-index: 11;
+    font-size: 2rem;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.38);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
 }
 
 .carousel-indicators button {
@@ -588,6 +623,44 @@ section {
     padding: 80px 0 40px;
 }
 
+.footer-modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    padding: 24px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    margin-bottom: 24px;
+}
+
+.footer-modern-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-modern-brand p {
+    color: #c9c9c9;
+    font-size: 0.92rem;
+}
+
+.footer-modern-links {
+    display: flex;
+    gap: 22px;
+}
+
+.footer-modern-links a {
+    color: #e7e7e7;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-modern-links a:hover {
+    color: #fff;
+}
+
 .footer-top {
     margin-bottom: 64px;
 }
@@ -685,6 +758,20 @@ section {
         box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
 
+    .carousel-control {
+        width: 42px;
+        height: 42px;
+        font-size: 1.6rem;
+    }
+
+    .carousel-control.prev {
+        left: 12px;
+    }
+
+    .carousel-control.next {
+        right: 12px;
+    }
+
     .nav-links li {
         width: 100%;
     }
@@ -714,6 +801,16 @@ section {
     .footer-links {
         flex-direction: column;
         gap: 40px;
+    }
+
+    .footer-modern {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-modern-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
     }
 
     .footer-bottom {

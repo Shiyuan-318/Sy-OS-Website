@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initCarousel() {
     const items = document.querySelectorAll('.carousel-item');
     const indicators = document.querySelectorAll('.carousel-indicators button');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
     if (!items.length) return;
 
     let currentIndex = 0;
@@ -27,12 +29,31 @@ function initCarousel() {
         showSlide(next);
     }
 
+    function prevSlide() {
+        let prev = (currentIndex - 1 + items.length) % items.length;
+        showSlide(prev);
+    }
+
     indicators.forEach((ind, index) => {
         ind.addEventListener('click', () => {
             showSlide(index);
             resetInterval();
         });
     });
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+    }
 
     function resetInterval() {
         clearInterval(interval);
