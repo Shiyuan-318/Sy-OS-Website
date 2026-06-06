@@ -1,198 +1,333 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sy OS</title>
+    <title>Sy OS — 全场景智能操作系统</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <!-- 噪点纹理覆盖层 -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- 背景渐变光晕 -->
+    <div class="bg-glow" aria-hidden="true">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo" style="text-decoration: none;">
+            <a href="index.html" class="logo">
                 <img src="Logo.png" alt="Sy OS Logo" class="logo-img">
                 <span class="logo-text">Sy OS</span>
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="syos.html">Sy OS</a></li>
-                <li><a href="syos-vision.html">Sy OS Vision</a></li>
-                <li><a href="syos-next.html">Sy OS NEXT</a></li>
+                <li><a href="syos-vision.html">Vision</a></li>
+                <li><a href="syos-next.html">NEXT</a></li>
+                <li><a href="#products">产品</a></li>
+                <li><a href="#experience">体验</a></li>
             </ul>
-            <div class="nav-right">
-                <button class="nav-toggle" aria-label="菜单">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <section class="hero carousel">
-        <div class="carousel-inner">
-            <a href="syos.html" class="carousel-item active">
-                <div class="hero-visual full-image">
-                    <img src="hero1.jpg" alt="Sy OS 宣传图" class="hero-img" onerror="this.onerror=null;this.src='1145.png';">
-                </div>
-            </a>
-            <a href="syos-next.html" class="carousel-item">
-                <div class="hero-visual full-image">
-                    <img src="hero2.jpg" alt="Sy OS NEXT 宣传图" class="hero-img" onerror="this.onerror=null;this.src='1145.png';">
-                </div>
-            </a>
-            <a href="syos-vision.html" class="carousel-item">
-                <div class="hero-visual full-image">
-                    <img src="hero3.jpg" alt="Sy OS Vision 宣传图" class="hero-img" onerror="this.onerror=null;this.src='1145.png';">
-                </div>
-            </a>
-        </div>
-        <button class="carousel-control prev" aria-label="上一张">‹</button>
-        <button class="carousel-control next" aria-label="下一张">›</button>
-        <div class="carousel-indicators">
-            <button class="active" aria-label="Slide 1"></button>
-            <button aria-label="Slide 2"></button>
-            <button aria-label="Slide 3"></button>
-        </div>
-    </section>
-
-    <section id="products" class="products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">全场景智能产品</h2>
-                <p class="section-subtitle">覆盖面广，覆盖不同场景需求，构建全连接的智能世界。</p>
+    <main>
+        <!-- Hero 轮播 -->
+        <section class="hero carousel" id="heroCarousel">
+            <div class="carousel-inner">
+                <a href="syos.html" class="carousel-item active">
+                    <div class="hero-visual full-image">
+                        <img src="hero1.jpg" alt="Sy OS 宣传图" class="hero-img" onerror="this.onerror=null;this.src='1145.png';">
+                    </div>
+                    <div class="carousel-caption">
+                        <span class="caption-tag">核心产品</span>
+                        <h2>Sy OS</h2>
+                        <p>全场景智能操作系统的起点</p>
+                    </div>
+                </a>
+                <a href="syos-next.html" class="carousel-item">
+                    <div class="hero-visual full-image">
+                        <img src="hero2.jpg" alt="Sy OS NEXT 宣传图" class="hero-img" onerror="this.onerror=null;this.src='1145.png';">
+                    </div>
+                    <div class="carousel-caption">
+                        <span class="caption-tag">全新发布</span>
+                        <h2>Sy OS NEXT</h2>
+                        <p>64 位桌面操作系统，性能跃迁</p>
+                    </div>
+                </a>
+                <a href="syos-vision.html" class="carousel-item">
+                    <div class="hero-visual full-image">
+                        <img src="hero3.jpg" alt="Sy OS Vision 宣传图" class="hero-img" onerror="this.onerror=null;this.src='1145.png';">
+                    </div>
+                    <div class="carousel-caption">
+                        <span class="caption-tag">空间计算</span>
+                        <h2>Sy OS Vision</h2>
+                        <p>AR 空间交互，探索无限可能</p>
+                    </div>
+                </a>
             </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Sy OS.jpg" alt="Sy OS 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sy OS</h3>
-                        <p class="product-desc">Scratch 制作的伪桌面操作系统，Sy OS 系列核心产品。</p>
-                        <div class="product-links"><a href="syos.html" class="learn-more">了解更多 &gt;</a></div>
-                    </div>
-                </div>
+            <button class="carousel-control prev" aria-label="上一张">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-control next" aria-label="下一张">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <div class="carousel-indicators">
+                <button class="active" aria-label="Slide 1"></button>
+                <button aria-label="Slide 2"></button>
+                <button aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-progress">
+                <div class="carousel-progress-bar" id="carouselProgress"></div>
+            </div>
+        </section>
 
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Sy OS NEXT.jpg" alt="Sy OS NEXT 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
-                        <span class="badge">全新发布</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sy OS NEXT</h3>
-                        <p class="product-desc">全新 Sy OS 产品，64 位桌面操作系统。</p>
-                        <div class="product-links"><a href="syos-next.html" class="learn-more">了解更多 &gt;</a></div>
-                    </div>
+        <!-- 产品展示 -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">产品矩阵</span>
+                    <h2 class="section-title">全场景智能产品</h2>
+                    <p class="section-subtitle">覆盖不同场景需求，构建全连接的智能世界</p>
                 </div>
+                <div class="products-grid">
+                    <div class="product-card reveal">
+                        <div class="product-image-wrapper">
+                            <img src="Sy OS.jpg" alt="Sy OS" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">核心</span>
+                            <h3 class="product-title">Sy OS</h3>
+                            <p class="product-desc">Scratch 制作的伪桌面操作系统，Sy OS 系列核心产品。</p>
+                            <a href="syos.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
+                    </div>
 
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Sy OS 国际版.jpg" alt="Sy OS 国际版 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
+                    <div class="product-card reveal" data-highlight="true">
+                        <div class="product-image-wrapper">
+                            <img src="Sy OS NEXT.jpg" alt="Sy OS NEXT" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                            <span class="badge">全新发布</span>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">旗舰</span>
+                            <h3 class="product-title">Sy OS NEXT</h3>
+                            <p class="product-desc">全新 Sy OS 产品，64 位桌面操作系统。</p>
+                            <a href="syos-next.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sy OS 国际版</h3>
-                        <p class="product-desc">国际化版本，面向全球用户。</p>
-                        <div class="product-links"><a href="syos-intl.html" class="learn-more">了解更多 &gt;</a></div>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Sy OS for Pad.jpg" alt="Sy OS for Pad 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
+                    <div class="product-card reveal">
+                        <div class="product-image-wrapper">
+                            <img src="Sy OS 国际版.jpg" alt="Sy OS 国际版" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">全球</span>
+                            <h3 class="product-title">Sy OS 国际版</h3>
+                            <p class="product-desc">国际化版本，面向全球用户。</p>
+                            <a href="syos-intl.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sy OS for Pad</h3>
-                        <p class="product-desc">专为大屏触控体验优化。</p>
-                        <div class="product-links"><a href="syos-pad.html" class="learn-more">了解更多 &gt;</a></div>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Sy OS SE.jpg" alt="Sy OS SE 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
+                    <div class="product-card reveal">
+                        <div class="product-image-wrapper">
+                            <img src="Sy OS for Pad.jpg" alt="Sy OS for Pad" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">平板</span>
+                            <h3 class="product-title">Sy OS for Pad</h3>
+                            <p class="product-desc">专为大屏触控体验优化。</p>
+                            <a href="syos-pad.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sy OS SE</h3>
-                        <p class="product-desc">轻量精简，高效流畅。</p>
-                        <div class="product-links"><a href="syos-se.html" class="learn-more">了解更多 &gt;</a></div>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Sy OS Vision.jpg" alt="Sy OS Vision 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
+                    <div class="product-card reveal">
+                        <div class="product-image-wrapper">
+                            <img src="Sy OS SE.jpg" alt="Sy OS SE" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">轻量</span>
+                            <h3 class="product-title">Sy OS SE</h3>
+                            <p class="product-desc">轻量精简，高效流畅。</p>
+                            <a href="syos-se.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sy OS Vision</h3>
-                        <p class="product-desc">适用于 AR 设备的空间交互系统。</p>
-                        <div class="product-links"><a href="syos-vision.html" class="learn-more">了解更多 &gt;</a></div>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="Open Sy OS.jpg" alt="Open Sy OS 产品图片" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
-                        <div class="img-fallback-text">产品图片占位</div>
+                    <div class="product-card reveal">
+                        <div class="product-image-wrapper">
+                            <img src="Sy OS Vision.jpg" alt="Sy OS Vision" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">空间</span>
+                            <h3 class="product-title">Sy OS Vision</h3>
+                            <p class="product-desc">适用于 AR 设备的空间交互系统。</p>
+                            <a href="syos-vision.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Open Sy OS</h3>
-                        <p class="product-desc">开源版本，欢迎社区参与贡献。</p>
-                        <div class="product-links"><a href="open-syos.html" class="learn-more">了解更多 &gt;</a></div>
+
+                    <div class="product-card reveal">
+                        <div class="product-image-wrapper">
+                            <img src="Open Sy OS.jpg" alt="Open Sy OS" class="product-img-placeholder" onerror="this.onerror=null;this.src='1145.png';">
+                            <div class="product-image-overlay"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">开源</span>
+                            <h3 class="product-title">Open Sy OS</h3>
+                            <p class="product-desc">开源版本，欢迎社区参与贡献。</p>
+                            <a href="open-syos.html" class="learn-more">了解更多 <span class="arrow">→</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">为什么选择 Sy OS？</h2>
-                <p class="section-subtitle">持续创新，为用户提供极致体验</p>
+        <!-- 特性 -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">核心优势</span>
+                    <h2 class="section-title">为什么选择 Sy OS？</h2>
+                    <p class="section-subtitle">持续创新，为用户提供极致体验</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                        </div>
+                        <h3>全场景跨平台</h3>
+                        <p>覆盖桌面、平板、AR 等多种终端设备，一套生态无缝流转。</p>
+                    </div>
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3>开放生态</h3>
+                        <p>Open Sy OS 支持开源协作与社区共建，共同推动生态繁荣。</p>
+                    </div>
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h3>持续进化</h3>
+                        <p>从 Scratch 伪系统到真系统，不断突破技术边界。</p>
+                    </div>
+                    <div class="feature-item reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>极简设计</h3>
+                        <p>更清爽的视觉与更直接的交互路径，让操作自然流畅。</p>
+                    </div>
+                </div>
             </div>
-            <div class="features-grid">
-                <div class="feature-item"><div class="feature-content"><h3>全场景跨平台</h3><p>覆盖桌面、平板、AR 等多种终端设备。</p></div></div>
-                <div class="feature-item"><div class="feature-content"><h3>开放生态</h3><p>Open Sy OS 支持开源协作与社区共建。</p></div></div>
-                <div class="feature-item"><div class="feature-content"><h3>产品覆盖面广</h3><p>从 Scratch 伪系统到真系统，持续进化。</p></div></div>
-                <div class="feature-item"><div class="feature-content"><h3>极简设计</h3><p>更清爽的视觉与更直接的交互路径。</p></div></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">立即体验</h2>
-                <p class="section-subtitle">无需安装，即刻在线体验 Sy OS。</p>
+        <!-- 立即体验 -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">即刻开始</span>
+                    <h2 class="section-title">立即体验</h2>
+                    <p class="section-subtitle">无需安装，即刻在线体验 Sy OS</p>
+                </div>
+                <div class="experience-list">
+                    <a href="https://ccw.site/s/RZp2zN" target="_blank" class="exp-item reveal">
+                        <div class="exp-text">
+                            <span class="exp-tag">稳定版</span>
+                            <h4>Sy OS 稳定版</h4>
+                            <p>体验成熟功能</p>
+                        </div>
+                        <span class="exp-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://ccw.site/s/LYwpB" target="_blank" class="exp-item reveal">
+                        <div class="exp-text">
+                            <span class="exp-tag">测试版</span>
+                            <h4>Sy OS 测试版</h4>
+                            <p>抢先体验新特性</p>
+                        </div>
+                        <span class="exp-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://scratch.mit.edu/projects/1282208437" target="_blank" class="exp-item reveal">
+                        <div class="exp-text">
+                            <span class="exp-tag">国际版</span>
+                            <h4>Sy OS 国际版</h4>
+                            <p>Global Version Experience</p>
+                        </div>
+                        <span class="exp-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://ccw.site/s/YRyYRB" target="_blank" class="exp-item reveal">
+                        <div class="exp-text">
+                            <span class="exp-tag">轻量版</span>
+                            <h4>Sy OS SE</h4>
+                            <p>轻量精简版</p>
+                        </div>
+                        <span class="exp-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://ccw.site/s/DlNRlM" target="_blank" class="exp-item reveal">
+                        <div class="exp-text">
+                            <span class="exp-tag">平板版</span>
+                            <h4>Sy OS for Pad</h4>
+                            <p>专为大屏触控设计</p>
+                        </div>
+                        <span class="exp-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                </div>
             </div>
-            <div class="experience-list">
-                <a href="https://ccw.site/s/RZp2zN" target="_blank" class="exp-item"><div class="exp-text"><h4>Sy OS 稳定版</h4><p>体验成熟功能</p></div><span class="exp-arrow">&gt;</span></a>
-                <a href="https://ccw.site/s/LYwpB" target="_blank" class="exp-item"><div class="exp-text"><h4>Sy OS 测试版</h4><p>抢先体验新特性</p></div><span class="exp-arrow">&gt;</span></a>
-                <a href="https://scratch.mit.edu/projects/1282208437" target="_blank" class="exp-item"><div class="exp-text"><h4>Sy OS 国际版</h4><p>Global Version Experience</p></div><span class="exp-arrow">&gt;</span></a>
-                <a href="https://ccw.site/s/YRyYRB" target="_blank" class="exp-item"><div class="exp-text"><h4>Sy OS SE</h4><p>轻量精简版</p></div><span class="exp-arrow">&gt;</span></a>
-                <a href="https://ccw.site/s/DlNRlM" target="_blank" class="exp-item"><div class="exp-text"><h4>Sy OS for Pad</h4><p>专为大屏触控设计</p></div><span class="exp-arrow">&gt;</span></a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-modern">
-                <div class="footer-modern-brand">
-                    <img src="Logo.png" alt="Sy OS" class="footer-logo-img">
-                    <p>Sy OS 系列操作系统，持续探索更流畅的数字体验。</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-group">
+                        <img src="Logo.png" alt="Sy OS" class="footer-logo-img">
+                        <span class="footer-logo-text">Sy OS</span>
+                    </div>
+                    <p class="footer-desc">Sy OS 系列操作系统，持续探索更流畅的数字体验。</p>
                 </div>
-                <div class="footer-modern-links">
-                    <a href="#experience">在线体验</a>
-                    <a href="https://qm.qq.com/q/bWZFbX8iwE" target="_blank">QQ 社群</a>
-                    <a href="#">问题反馈</a>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>产品</h4>
+                        <ul>
+                            <li><a href="syos.html">Sy OS</a></li>
+                            <li><a href="syos-next.html">Sy OS NEXT</a></li>
+                            <li><a href="syos-vision.html">Sy OS Vision</a></li>
+                            <li><a href="open-syos.html">Open Sy OS</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>社区</h4>
+                        <ul>
+                            <li><a href="https://qm.qq.com/q/bWZFbX8iwE" target="_blank">QQ 社群</a></li>
+                            <li><a href="#">问题反馈</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
