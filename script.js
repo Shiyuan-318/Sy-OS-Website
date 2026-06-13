@@ -1,11 +1,12 @@
 /* ============================================
-   Sy OS 官网 - 全局交互脚本
+   Sy OS 官网 — 全局交互脚本
+   Apple iOS 风格：丝滑滚动动画 + 导航交互
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollReveal();
-  initPageLoadAnimation();
+  initParallax();
 });
 
 /* --- 导航栏 --- */
@@ -14,38 +15,19 @@ function initNavbar() {
   const hamburger = document.querySelector('.nav-hamburger');
   const mobileMenu = document.querySelector('.nav-mobile');
 
-  // 滚动时导航栏样式变化
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }, { passive: true });
-  }
-
-  // 汉堡菜单
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     });
 
-    // 点击菜单项后关闭
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
         mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
       });
-    });
-
-    // 点击外部关闭
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      }
     });
   }
 }
@@ -63,19 +45,34 @@ function initScrollReveal() {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -60px 0px'
   });
 
   reveals.forEach(el => observer.observe(el));
 }
 
-/* --- 页面加载动画 --- */
-function initPageLoadAnimation() {
-  document.body.style.opacity = '0';
-  document.body.style.transition = 'opacity 0.4s ease';
+/* --- 视差效果 --- */
+function initParallax() {
+  const heroVisuals = document.querySelectorAll('.hero-visual, .product-hero-visual');
 
-  requestAnimationFrame(() => {
-    document.body.style.opacity = '1';
-  });
+  if (!heroVisuals.length) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        heroVisuals.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.bottom > 0 && rect.top < window.innerHeight) {
+            const progress = scrollY * 0.15;
+            el.style.transform = `translateY(${progress}px)`;
+          }
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
